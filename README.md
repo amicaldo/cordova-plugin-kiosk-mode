@@ -12,7 +12,7 @@ $ npm i https://github.com/amicaldo/cordova-plugin-kiosk-mode
 In order to properly use this plugin, your give your app the `android.permission.WRITE_SECURE_SETTINGS` permission:
 
 ```bash
-adb shell pm grant io.ionic.starter android.permission.WRITE_SECURE_SETTINGS
+$ adb shell pm grant <package> android.permission.WRITE_SECURE_SETTINGS
 ```
 
 This is needed to update the `Settings.Global.DEVICE_PROVISIONED` setting.

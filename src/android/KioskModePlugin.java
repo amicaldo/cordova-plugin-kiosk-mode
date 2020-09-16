@@ -1,10 +1,10 @@
 package de.amicaldo.cordova.plugin;
 
-import android.content.Intent;
-import org.apache.cordova.*;
-import android.widget.*;
-import org.json.JSONArray;
 import de.amicaldo.cordova.plugin.KioskModeActivity;
+import android.content.Intent;
+import android.widget.*;
+import org.apache.cordova.*;
+import org.json.JSONArray;
 
 
 public class KioskModePlugin extends CordovaPlugin {

@@ -1,13 +1,13 @@
 package de.amicaldo.cordova.plugin;
 
 import android.app.ActivityManager;
+import android.provider.Settings;
 import android.content.Context;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.*;
 import org.apache.cordova.*;
 
-import android.provider.Settings;
 
 public class KioskModeActivity extends CordovaActivity {
     private static volatile KioskModeActivity instance = null;
@@ -89,7 +89,7 @@ public class KioskModeActivity extends CordovaActivity {
                 (this.kioskModeEnabled) ? 0 : 1
             );
         } catch(Exception e) {
-            System.out.println("Could not change Global.DEVICE_PROVISIONED Setting");
+            System.out.println(e.getMessage());
         }
     }
 

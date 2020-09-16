@@ -1,10 +1,10 @@
 package de.amicaldo.cordova.plugin;
 
+import de.amicaldo.cordova.plugin.KioskModeActivity;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 
-import de.amicaldo.cordova.plugin.KioskModeActivity;
 
 public class MyPackageReplacedEventReceiver extends BroadcastReceiver {
     @Override

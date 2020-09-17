@@ -1,7 +1,11 @@
 {
   "name": "cordova-plugin-kiosk-mode",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Cordova kiosk mode plugin",
+  "main": "./www/kiosk-mode.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
   "cordova": {
     "id": "cordova-plugin-kiosk-mode",
     "platforms": [
@@ -10,7 +14,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/amicaldo/cordova-plugin-kiosk-mode.git"
+    "url": "git+https://github.com/amicaldo/cordova-plugin-kiosk-mode.git"
   },
   "keywords": [
     "android",
@@ -22,7 +26,7 @@
     "ecosystem:cordova"
   ],
   "author": "Jannik Hauptvogel <hauptvogel@amicaldo.de>",
-  "license": "Apache 2.0",
+  "license": "Apache-2.0",
   "bugs": {
     "url": "https://github.com/amicaldo/cordova-plugin-kiosk-mode/issues"
   },

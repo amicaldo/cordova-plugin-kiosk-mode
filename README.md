@@ -17,6 +17,16 @@ $ adb shell pm grant <package> android.permission.WRITE_SECURE_SETTINGS
 
 This is needed to update the `Settings.Global.DEVICE_PROVISIONED` setting.
 
+
+
+Another approach is to install your application with the `-g` flag:
+
+```bash
+$ adb install -g <apk>
+```
+
+This will grant your application all permissions listed in the app manifest.
+
 ### Enable Kiosk Mode
 
 * Manually set your application as launcher in your android settings*

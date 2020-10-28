@@ -36,6 +36,20 @@ public class KioskModePlugin extends CordovaPlugin {
 
                 return true;
 
+            case "enableAdb":
+                this.setAdbEnabled(true);
+
+                callbackContext.success();
+
+                return true;
+
+            case "disableAdb":
+                this.setAdbEnabled(false);
+
+                callbackContext.success();
+
+                return true;
+
             case "isLauncher":
                 boolean isLauncher = this.isKioskModeLauncher();
 
@@ -88,6 +102,16 @@ public class KioskModePlugin extends CordovaPlugin {
             .resolveActivity(intent, 0)
             .activityInfo
             .packageName;
+    }
+
+    private void setAdbEnabled(boolean enabled) {
+        KioskModeActivity instance = KioskModeActivity.getInstance();
+
+        if (instance != null) {
+            this.cordova.getActivity().runOnUiThread(() -> {
+                instance.setAdbEnabled(enabled);
+            });
+        }
     }
 
     private boolean isKioskModeLauncher() {

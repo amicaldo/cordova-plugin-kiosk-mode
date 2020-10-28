@@ -52,6 +52,20 @@ class KioskMode {
   static switchLauncher() {
     return KioskMode._exec('switchLauncher');
   }
+
+  /**
+   * @return {Promise<any>}
+   */
+  static enableAdb() {
+    return KioskMode._exec('enableAdb');
+  }
+
+  /**
+   * @return {Promise<any>}
+   */
+  static disableAdb() {
+    return KioskMode._exec('disableAdb');
+  }
 }
 
 

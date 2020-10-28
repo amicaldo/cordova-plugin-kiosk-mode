@@ -111,4 +111,16 @@ public class KioskModeActivity extends CordovaActivity {
                 .setSystemUiVisibility(View.SYSTEM_UI_FLAG_VISIBLE);
         }
     }
+
+    public void setAdbEnabled(boolean enabled) {
+        try {
+            Settings.Global.putInt(
+                this.getApplicationContext().getContentResolver(),
+                Settings.Global.ADB_ENABLED,
+                (enabled) ? 0 : 1
+            );
+        } catch(Exception e) {
+            System.out.println(e.getMessage());
+        }
+    }
 }

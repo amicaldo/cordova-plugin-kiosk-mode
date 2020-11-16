@@ -12,7 +12,8 @@ import org.apache.cordova.*;
 public class KioskModeActivity extends CordovaActivity {
     private static volatile KioskModeActivity instance = null;
 
-    private volatile boolean kioskModeEnabled = false;
+    private volatile boolean kioskModeEnabled = true;
+    private volatile boolean adbEnabled = false;
 
     public static KioskModeActivity getInstance() {
         return KioskModeActivity.instance;
@@ -73,12 +74,12 @@ public class KioskModeActivity extends CordovaActivity {
     /**
      * Custom methods
      */
-    public boolean getKioskModeEnabled() {
-        return this.kioskModeEnabled;
-    }
-
     public void setKioskModeEnabled(boolean enabled) {
         this.kioskModeEnabled = enabled;
+    }
+
+    public boolean getKioskModeEnabled() {
+        return this.kioskModeEnabled;
     }
 
     public void updateDeviceProvisioning() {
@@ -113,11 +114,21 @@ public class KioskModeActivity extends CordovaActivity {
     }
 
     public void setAdbEnabled(boolean enabled) {
+        this.adbEnabled = enabled;
+
+        this.updateAdb();
+    }
+
+    public boolean getAdbEnabled() {
+        return this.adbEnabled;
+    }
+
+    public void updateAdb() {
         try {
             Settings.Global.putInt(
                 this.getApplicationContext().getContentResolver(),
                 Settings.Global.ADB_ENABLED,
-                (enabled) ? 0 : 1
+                (this.adbEnabled) ? 1 : 0
             );
         } catch(Exception e) {
             System.out.println(e.getMessage());

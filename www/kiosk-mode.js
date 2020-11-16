@@ -66,6 +66,15 @@ class KioskMode {
   static disableAdb() {
     return KioskMode._exec('disableAdb');
   }
+
+  /**
+   * @return {Promise<boolean>}
+   */
+  static isAdbEnabled() {
+    return KioskMode._exec('isAdbEnabled')
+      .then((out) => out == 'true')
+      .catch((err) => false);
+  }
 }
 
 

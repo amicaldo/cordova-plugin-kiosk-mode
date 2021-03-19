@@ -32,7 +32,6 @@
             mode="merge"
         >
             <activity
-                android:name="de.amicaldo.cordova.plugin.KioskModeActivity"
                 android:keepScreenOn="true"
                 android:theme="@android:style/Theme.DeviceDefault.NoActionBar"
             ></activity>
@@ -45,8 +44,7 @@
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.HOME" />
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
+            </intent-filter>x
         </config-file>
 
         <config-file target="AndroidManifest.xml" parent="/manifest/application">
@@ -55,6 +53,15 @@
                     <action android:name="android.intent.action.MY_PACKAGE_REPLACED" />
                 </intent-filter>
             </receiver>
+
+            <activity-alias android:targetActivity=".MainActivity" android:name=".SetAsLauncher" android:enabled="false">
+                <intent-filter>
+                    <action android:name="android.intent.action.MAIN" />
+                    <category android:name="android.intent.category.LAUNCHER" />
+                    <category android:name="android.intent.category.HOME"/>
+                    <category android:name="android.intent.category.DEFAULT"/>
+                </intent-filter>
+            </activity-alias>
         </config-file>
 
         <config-file target="AndroidManifest.xml" parent="/manifest" after="uses-permission">
